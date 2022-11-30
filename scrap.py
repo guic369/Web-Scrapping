@@ -12,14 +12,14 @@ soup = BeautifulSoup(html, 'html.parser')
 tempo = soup.find(class_='titulo')
 print(tempo.text)
 
-temp_min = soup.find(class_='minima changeUnitT')
+temp_atual = soup.find(class_='dato-temperatura changeUnitT')
+print(f'A temperatura atual é de {temp_atual.text}')
 
-print(f'A minima é de: {temp_min.text}')
+temp_min = soup.find(class_='minima changeUnitT')
+print(f'A minima para hoje é {temp_min.text}')
 
 temp_max = soup.find(class_='maxima changeUnitT')
-
-print(f'A maxima é de: {temp_max.text}')
+print(f'A maxima para hoje é {temp_max.text}')
 
 probab_chuva = soup.find(class_='probabilidad-lluvia')
-
-print(f'A probabilidade de chuva é de: {probab_chuva.text}')
+print(f'A probabilidade de chuva é de{probab_chuva.text}')
